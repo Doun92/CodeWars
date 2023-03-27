@@ -1,0 +1,29 @@
+def get_middle(s):
+    # Création d'un teablea vide
+    tab = []
+    for char in s:
+        # print(char)
+        tab.append(char)
+        # print(tab)
+    lenTab = len(tab)
+    print(tab)
+    # print(lenTab)
+    while lenTab > 0 or lenTab < 1000:
+        print(lenTab)
+        # Premier cas : il n'y a qu'une lettre au milieu
+        if lenTab == 1:
+            s = "".join(tab)
+            return s
+            break
+        # Deuxième cas : il y a deux lettres au milieu
+        elif lenTab == 2:
+            s = "".join(tab)
+            return s
+            break
+        else:
+            print(tab)
+            # On retire la première donnée du tableau
+            tab.pop(0)
+            # On retire la deuxième donnée d utableau
+            tab.pop(-1)
+            lenTab = lenTab -2
