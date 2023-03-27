@@ -1,0 +1,13 @@
+def square_digits(num):
+    # Pour faire le calcul, il faut les sélectionner les uns après les autres
+    # Pour que for fonctionne, il faut des strings
+    string = str(num)
+    arr = []
+    for x in string:
+        # Pour que le calcul fonctionne, il faut des integrer
+        solution = int(x) * int(x)
+        # Ensuite, on remets en string
+        arr.append(str(solution))
+    nb = ('').join(arr)
+    nb = int(nb)
+    return(nb)
