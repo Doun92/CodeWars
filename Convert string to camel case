@@ -1,0 +1,17 @@
+def to_camel_case(text):
+    table=[]
+    if '-' or '_' in text:
+        a = text.split('-')
+        b = "_".join(a)
+        c = b.split('_')
+        for d in c:
+            e = d.capitalize()
+            table.append(e)
+        print(text[:1])
+        if text[:1].isupper() == True:
+            f = "".join(table)
+            return f
+        else:
+            f = "".join(table)
+            g = f[:1].lower() + f[1:]
+            return g
