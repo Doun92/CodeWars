@@ -1,0 +1,42 @@
+def order(sentence):
+    # print(sentence)
+    # Création d'une lsite vide dans laquelle mettre les nombres
+    premierTabVide = []
+    # Création du tableau final
+    finalTab = []
+    # Création d'un nouveau dictionnaire dans lequel mettre les égalités entre nombre et mots
+    dict_vide = {}
+    # Transformation de la phrase en lsite de mots
+    sentence_array = sentence.split(' ')
+    # print(sentence_array)
+    # print(len(sentence_array))
+    # n = len(sentence_array)
+    # On cherche chaque mot dans la lsite
+    for word in sentence_array:
+        # print(word)
+        # On cherche chaque caractère dans la lsite
+        for char in word:
+            # print(char)
+            # On cherche ensuite les caractères numériques
+            if char in '0123456789':
+                # On range dans le dictionnaire les caractères et les mots qui leurs sont affiliés
+                dict_vide[char] = word
+                # On les transforme en nombre
+                # char = int(char)
+                # premierTabVide.append(char)
+    # premierTabVide.sort()
+    # print(premierTabVide)
+    print(dict_vide)
+
+    # Pour osrt un dictionnaire selon les keys
+    sd = sorted(dict_vide.items())
+
+    # On ajoute ça dans une lsite
+    for k,v in sd:
+        finalTab.append(v)
+        # print(k, v)
+    # print(finalTab)
+    # Liste -> string
+    finalTab = " ".join(finalTab)
+    print(finalTab)
+    return finalTab
