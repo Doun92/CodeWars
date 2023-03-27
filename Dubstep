@@ -1,0 +1,18 @@
+def song_decoder(song):
+    decode = song.split('WUB')
+
+    longueur = len(decode)
+    l = 0
+    while l < longueur:
+        # print(l)
+        wub = ''
+        if wub not in decode:
+            pass
+        else:
+            index = decode.index(wub)
+            # print(index)
+            decode.pop(index)
+        l += 1
+
+    decode = " ".join(decode)
+    return decode
