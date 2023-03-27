@@ -1,0 +1,6 @@
+def printer_error(s):
+    count = []
+    for x in s:
+        if x in 'nopqrstuvwxyz':
+            count.append(x)
+    return(str(len(count)) + "/" + str(len(s)))
