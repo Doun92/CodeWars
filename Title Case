@@ -1,0 +1,19 @@
+def title_case(title, minor_words=''):
+    # Passer de string à table
+    array_title = title.split()
+    array_minor = minor_words.lower().split()
+    nouvelle_liste = []
+    for word in array_title:
+        # Tout en minuscule
+        word = word.lower()
+        if word in array_minor:
+            pass
+        else:
+            word=word.capitalize()
+        nouvelle_liste.append(word)
+    if len(nouvelle_liste) > 0:
+        if nouvelle_liste[0] in array_minor:
+            nouvelle_liste[0]=nouvelle_liste[0].capitalize()
+    
+    nouvelle_liste = " ".join(nouvelle_liste)
+    return nouvelle_liste
