@@ -1,0 +1,24 @@
+def anagrams(word, words):
+    # On prend le mot cible
+    # On créé une lsite vide
+    listeCible = []
+    listeFinale = []
+    # Création d'une slite vide
+    listeVide = []
+    # Circuler dans la liste
+    for wordArray in words:
+        # Les deux mots doivent avoir la même longueur
+        if len(wordArray) == len(word):
+            for char in word:
+                listeCible.append(char)
+            # Comme avant, on range chaque caractère dans la liste
+            for char in wordArray:
+                listeVide.append(char)
+            listeCible.sort()
+            listeVide.sort()
+            if listeCible == listeVide:
+                listeFinale.append(wordArray)
+            # Ne pas oublier d'effacer les listes
+            listeCible = []
+            listeVide = []
+    return listeFinale
