@@ -1,0 +1,51 @@
+def make_readable(seconds):
+    if seconds == 0:
+        return("00:00:00")
+    else:
+        # heures
+        result = seconds/3600
+        heures = str(result).split('.')[0]
+        reste_h = str(result).split('.')[-1]
+
+        if heures == 0:
+            final_result_h = "00:"
+        elif int(heures) < 10:
+            final_result_h = "0" + str(heures) + ":"
+        else:
+            final_result_h = str(heures) + ":"
+        
+        # minutes
+        reste_h = "0." + reste_h
+        reste_h = float(reste_h)
+        reste_m = reste_h * 60
+
+        minutes = str(reste_m).split('.')[0]
+        reste_s = str(reste_m).split('.')[-1]
+
+        if minutes == 0:
+            final_result_m = "00:"
+        elif int(minutes) < 10:
+            final_result_m = "0" + str(minutes) + ":"
+        else:
+            final_result_m = str(minutes) + ":"
+
+        # secondes
+        reste_s = "0." + reste_s
+        reste_s = float(reste_s)
+        reste_s = reste_s * 60
+
+        secondes = str(reste_s).split('.')[0]
+
+        secondes_decimales = str(reste_s).split('.')[-1]
+        if int(secondes_decimales[0]) >=6 :
+            secondes = int(secondes)+1
+
+        if secondes == 0:
+            final_result_s = "00"
+        elif int(secondes) < 10:
+            final_result_s = "0" + str(secondes)
+        else:
+            final_result_s = str(secondes)
+
+        final_result = final_result_h + final_result_m + final_result_s
+        return(final_result)
